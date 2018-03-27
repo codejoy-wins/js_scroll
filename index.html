@@ -32,7 +32,13 @@
 
 		function updateText()
 		{
-			el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
+
+			if (words[word_counter][character_counter]===' '){
+				el.innerHTML += "&nbsp;";
+				character_counter++;
+			} else {
+				el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
+			}
 
 			if(character_counter == words[word_counter].length+1)
 			{
@@ -46,7 +52,7 @@
 			}
 		}
 
-		setInterval(updateText,100);
+		setInterval(updateText,500);
 
 	</script>
 
